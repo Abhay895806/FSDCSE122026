@@ -78,34 +78,57 @@
 //       },1000)
 // },1000)
 
-const mypromise = new Promise((resolve,reject)=>
-{
-const username = "abhay";
-const password = "12345";
-if(username =="abhay"&& password =="12345"){
-    resolve("success");
-}else{
-    reject("username or password incorrect")
-}
-})
-// mypromise.then((msg)=>{
-//     console.log(msg)
-// }).catch((msg)=>{
-//     console.log(msg)
-// }).finally(()=>{
-//     console.log("All done")
-// })
- async function handleData(){
-    try{
+
+const loginPromise = new Promise((resolve, reject) => {
+    const username = "abhay";
+    const password = "12345";
+
+    if (username === "abhay" && password === "12345") {
+        resolve("Login Successful");
+    } else {
+        reject("Invalid Username or Password");
+    }
+});
+
+const coursePromise = new Promise((resolve, reject) => {
+    const courseAvailable = true;
+
+    if (courseAvailable) {
+        resolve("Course: B.Tech CSE");
+    } else {
+        reject("Course Not Found");
+    }
+});
+//  async function handleData(){
+//     try{
         
-               const msg =  await mypromise;
-               console.log(msg)
+//                const msg =  await myPromise;
+//                console.log(msg)
                 
-    }catch(err){
-        console.log(err)
-    }
-    finally{
-        console.log("All Done")
+//     }catch(err){
+//         console.log(err)
+//     }
+//     finally{
+//         console.log("All Done")
+//     }
+// }
+// handleData();
+
+async function handleData() {
+    try {
+        const login = await loginPromise;
+        console.log(login);
+
+        const course = await coursePromise;
+        console.log(course);
+
+        console.log("Welcome Abhay!");
+
+    } catch (error) {
+        console.log("Error:", error);
+    } finally {
+        console.log("All Done");
     }
 }
+
 handleData();

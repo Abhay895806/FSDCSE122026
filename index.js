@@ -33,21 +33,26 @@
 // }
 // sumWithMsg(sum,"Abhay")
 
-function login(msg,error){
+// function login(msg,error){
 
-if(error){
-    console.log("Error is:"+error);
-}
-else{
-    console.log(msg);
-}
-}
-function loginhandler(username,password,clbk){
-    if(username =="admin" && password=="12345"){
-        clbk("login successful",null);
-    }
-    else{
-        clbk(null,"username or password is incorrect")
-    }
-}
-loginhandler("abhay","12345",login)
+// if(error){
+//     console.log("Error is:"+error);
+// }
+// else{
+//     console.log(msg);
+// }
+// }
+// function loginhandler(username,password,clbk){
+//     if(username =="admin" && password=="12345"){
+//         clbk("login successful",null);
+//     }
+//     else{
+//         clbk(null,"username or password is incorrect")
+//     }
+// }
+// loginhandler("abhay","12345",login)
+console.log("one")
+setTimeout(()=>{
+    console.log("Two")
+},1000)
+console.log("Three")

@@ -51,8 +51,47 @@
 //     }
 // }
 // loginhandler("abhay","12345",login)
-console.log("one")
-setTimeout(()=>{
-    console.log("Two")
-},1000)
-console.log("Three")
+// console.log("one")
+// setTimeout(()=>{
+//     console.log("Two")
+// },1000)
+// console.log("Three")
+// setTimeout(()=>{
+//     console.log("One")
+//     setTimeout(()=>{
+//         console.log("Two")
+   
+//     setTimeout(()=>{
+//         console.log("Three")
+    
+//     setTimeout(()=>{
+//         console.log("Four")
+   
+//     setTimeout(()=>{
+//         console.log("Five")
+//     setTimeout(()=>{
+//         console.log("Six")
+//          },1000)
+//     },1000)
+//     },1000)
+//      },1000)
+//       },1000)
+// },1000)
+
+const mypromise = new Promise((resolve,reject)=>
+{
+const username = "abhay";
+const password = "12345";
+if(username =="abhay"&& password =="12345"){
+    resolve("success");
+}else{
+    reject("username or password incorrect")
+}
+})
+mypromise.then((msg)=>{
+    console.log(msg)
+}).catch((msg)=>{
+    console.log(msg)
+}).finally(()=>{
+    console.log("All done")
+})

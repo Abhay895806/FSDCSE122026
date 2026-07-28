@@ -82,16 +82,30 @@ const mypromise = new Promise((resolve,reject)=>
 {
 const username = "abhay";
 const password = "12345";
-if(username =="abhay"&& password =="2345"){
+if(username =="abhay"&& password =="12345"){
     resolve("success");
 }else{
     reject("username or password incorrect")
 }
 })
-mypromise.then((msg)=>{
-    console.log(msg)
-}).catch((msg)=>{
-    console.log(msg)
-}).finally(()=>{
-    console.log("All done")
-})
+// mypromise.then((msg)=>{
+//     console.log(msg)
+// }).catch((msg)=>{
+//     console.log(msg)
+// }).finally(()=>{
+//     console.log("All done")
+// })
+ async function handleData(){
+    try{
+        
+               const msg =  await mypromise;
+               console.log(msg)
+                
+    }catch(err){
+        console.log(err)
+    }
+    finally{
+        console.log("All Done")
+    }
+}
+handleData();

@@ -82,7 +82,7 @@ const mypromise = new Promise((resolve,reject)=>
 {
 const username = "abhay";
 const password = "12345";
-if(username =="abhay"&& password =="12345"){
+if(username =="abhay"&& password =="2345"){
     resolve("success");
 }else{
     reject("username or password incorrect")

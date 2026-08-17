@@ -132,6 +132,8 @@
 // }
 
 // handleData();
+
+//Dom manipulation
 const button=document.getElementById('btn');
 const container=document.getElementById('container');
  const loading= document.createElement('div');

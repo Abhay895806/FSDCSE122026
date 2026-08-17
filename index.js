@@ -79,26 +79,26 @@
 // },1000)
 
 
-const loginPromise = new Promise((resolve, reject) => {
-    const username = "abhay";
-    const password = "12345";
+// const loginPromise = new Promise((resolve, reject) => {
+//     const username = "abhay";
+//     const password = "12345";
 
-    if (username === "abhay" && password === "12345") {
-        resolve("Login Successful");
-    } else {
-        reject("Invalid Username or Password");
-    }
-});
+//     if (username === "abhay" && password === "12345") {
+//         resolve("Login Successful");
+//     } else {
+//         reject("Invalid Username or Password");
+//     }
+// });
 
-const coursePromise = new Promise((resolve, reject) => {
-    const courseAvailable = true;
+// const coursePromise = new Promise((resolve, reject) => {
+//     const courseAvailable = true;
 
-    if (courseAvailable) {
-        resolve("Course: B.Tech CSE");
-    } else {
-        reject("Course Not Found");
-    }
-});
+//     if (courseAvailable) {
+//         resolve("Course: B.Tech CSE");
+//     } else {
+//         reject("Course Not Found");
+//     }
+// });
 //  async function handleData(){
 //     try{
         
@@ -114,21 +114,63 @@ const coursePromise = new Promise((resolve, reject) => {
 // }
 // handleData();
 
-async function handleData() {
-    try {
-        const login = await loginPromise;
-        console.log(login);
+// async function handleData() {
+//     try {
+//         const login = await loginPromise;
+//         console.log(login);
 
-        const course = await coursePromise;
-        console.log(course);
+//         const course = await coursePromise;
+//         console.log(course);
 
-        console.log("Welcome Abhay!");
+//         console.log("Welcome Abhay!");
 
-    } catch (error) {
-        console.log("Error:", error);
-    } finally {
-        console.log("All Done");
-    }
-}
+//     } catch (error) {
+//         console.log("Error:", error);
+//     } finally {
+//         console.log("All Done");
+//     }
+// }
 
-handleData();
+// handleData();
+const button=document.getElementById('btn');
+const container=document.getElementById('container');
+ const loading= document.createElement('div');
+ container.appendChild(loading);
+
+async function fetchData(){
+                try{
+               loading.innerHTML="<h2>Loading Data...</h2>";
+const serverData=await fetch('https://fakestoreapi.com/products')
+const jsonData= await serverData.json();
+console.log(jsonData)
+           // container.innerHTML=`${JSON.stringify(jsonData)}` //template string${}
+
+           let table = `<table border ='4px' >
+           <tr> <td>IMAGE</td><td>ITEM_ID</td>
+            <td>TITLE</td>
+            <td>PRICE</td> </tr>
+          ${
+            jsonData.map((ele)=>(
+                `<tr>
+                <td><img src =${ele.image} height  = "100px" width ="100px" alt ='Cloth'/></td>
+                <td>${ele.id}</td>
+                <td>${ele.title}</td>
+                <td>${ele.price}</td>
+                </tr>`
+            ))
+          }
+
+           </table>`
+           container.innerHTML = table;
+            
+        
+        }catch(e){
+             loading.innerHTML='<h2>Loading Error</h2>'
+        }
+        finally{
+             loading.innerHTML=''
+        }
+
+        }
+
+button.addEventListener('click',fetchData)

@@ -4,6 +4,9 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
 import ICard from './component/ICard'
+import Gallery from './component/Gallery'
+import ReactHook from './component/ReactHook'
+import Imagemanipulation from './component/Imagemanipulation'
 
 function App() {
 // let a = 23;
@@ -13,9 +16,9 @@ function App() {
 // let college = "ABESEC";
   return (
     <div>
-      
-      <ICard/>
-      <ICard/>
+      {/* <Gallery></Gallery> */}
+      {/* <ReactHook/> */}
+      <Imagemanipulation/>
     </div>
   )
 }

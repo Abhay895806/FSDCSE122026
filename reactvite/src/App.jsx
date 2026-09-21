@@ -19,7 +19,7 @@ function App() {
     <div>
       {/* <Gallery></Gallery> */}
       {/* <ReactHook/> */}
-      <Imagemanipulation/>
+      {/* <Imagemanipulation/> */}
       <UseEffect/>
     </div>
   )

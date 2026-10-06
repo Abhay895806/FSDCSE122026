@@ -9,6 +9,7 @@ const[password,setPassword]=useState();
 function registerUser(e){
 e.preventDefault();
 regdata={name,email,password};
+
 //alert(name+email+password);
 }
   return (
